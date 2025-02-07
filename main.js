@@ -16,10 +16,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 廣告相關邏輯
     let isAdDisplayed = false;
-    window.addEventListener("scroll", () => {
+    window.addEventListener("DOMContentLoaded", () => {
       if (isAdDisplayed) return;
-      if (window.scrollY > 0) {
-        adBanner.classList.add("active");
+      else if (!adBanner.classList.contains("active")) {
+        adBanner.style.display = "block"; // 顯示廣告
+        setTimeout(() => {
+          adBanner.classList.add("active");
+        }, 40);
         isAdDisplayed = true;
       }
     });
