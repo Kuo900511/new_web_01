@@ -1,0 +1,64 @@
+body {
+  width: 100%; /* 容器寬度占營幕的 90% */
+  max-width: 1920px; /* 最大寬度不超過 400px */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center; /* 水平置中 */
+  align-items: center; /* 垂直置中 */
+  background-color: rgb(125, 125, 125); /* 設定黑色背景 */
+  min-height: 100vh;
+  font-family: Inter, sans-serif;
+}
+
+.banner {
+  position: fixed;
+  top: 0; /* 保持在頂部 */
+  left: 50%; /* 水平基於畫布中央 */
+  transform: translate(-50%, -100%); /* 一開始在頂部外不可見，同時水平置中 */
+  width: 100%; /* 寬度占螢幕的 90% */
+  max-width: 393px; /* 最大寬度限制 */
+  height: 174.13px;
+  background-color: rgba(0, 0, 0, 0); /*最後一個零是透明度*/
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  box-sizing: border-box; /* 包含內邊距計算 */
+  transition: transform 0.8s ease-out; /* 平滑滑入動畫 */
+  z-index: 1000; /* 確保廣告層級最高 */
+}
+
+.banner.active {
+  transform: translate(-50%, 0); /* 顯示廣告，滑動到畫布內 */
+}
+
+.banner img#bannerImg {
+  width: 100%; /* 將圖片寬度設為容器的 100% */
+  max-width: 400px; /* 設置最大寬度，防止圖片過大 */
+  height: auto; /* 保持圖片比例縮放 */
+  margin: 0 auto; /* 讓圖片居中 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /*陰影*/
+}
+
+.banner p {
+  margin: 0;
+  font-size: 16px;
+}
+
+.banner img#closeAd {
+  position: absolute;
+  top: 140.7px; /* 距離容器頂部 */
+  left: 338.6px; /* 距離容器左側 */
+  width: 60px; /* 設置圖片寬度 */
+  height: auto; /* 保持比例 */
+  cursor: pointer; /* 鼠標變成點擊手勢 */
+}
+
+#nextPageButton {
+  cursor: pointer; /* 鼠標變成點擊手勢 */
+}
+
+#lastPageButton {
+  cursor: pointer; /* 鼠標變成點擊手勢 */
+}
